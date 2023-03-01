@@ -1,0 +1,1323 @@
+# Last modified by Sean Hunt, 2014-02-16
+#	Copyright (c) 1989-95 by Jean-Christophe Collet
+#	Copyright (c) 1991-95 by M. Stephenson
+# NetHack may be freely redistributed.  See license for details.
+#
+
+#	The "fill" level for the mines.
+#
+#	This level is used to fill out any levels not occupied by
+#	specific levels as defined below.
+#
+MAZE: "minefill" , ' '
+INIT_MAP: '.' , ' ' , true , true , random , true
+NOMAP
+#
+STAIR: random, up
+STAIR: random, down
+#
+OBJECT: '*', random, random
+OBJECT: '*', random, random
+OBJECT: '*', random, random
+OBJECT: '(', random, random
+OBJECT: random, random, random
+OBJECT: random, random, random
+OBJECT: random, random, random
+#
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome lord", random
+MONSTER: 'h', "dwarf", random
+MONSTER: 'h', "dwarf", random
+MONSTER: 'G', random, random
+MONSTER: 'G', random, random
+MONSTER: 'h', random, random
+#
+TRAP: random, random
+TRAP: random, random
+TRAP: random, random
+TRAP: random, random
+TRAP: random, random
+TRAP: random, random
+
+
+# Minetown variant 1
+# "Frontier Town"
+#
+LEVEL: "minetn-1"
+
+ROOM: "ordinary" , lit, (3,3), (center,center), (33,17)
+NAME: "town"
+FOUNTAIN: (14, 8)
+FOUNTAIN: (21, 8)
+OBJECT: '*', "touchstone", random, cursed, 0
+
+# The Town Watch
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+
+SUBROOM: "shop" , lit, (3,3), (3,4), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "tool shop", lit, (3,10), (3,4), "town"
+DOOR: false, closed, north, random
+
+SUBROOM: "ordinary", unlit, (7,3), (3,4), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", lit, (7,10), (3,4), "town"
+DOOR: false, closed, north, random
+
+SUBROOM: "food shop", lit, (11,3), (2,3), "town"
+CHANCE: 50
+DOOR: false, closed, south, random
+
+SUBROOM: "candle shop", lit, (23,3), (3,3), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", unlit, (11,11), (2,3), "town"
+DOOR: false, locked, east, random
+MONSTER: 'h', "dwarf lord", random
+
+SUBROOM: "ordinary", lit, (20,3),  (2,3), "town"
+DOOR: false, locked, west, random
+MONSTER: 'G', "gnome", random
+
+SUBROOM: "temple", lit, (16,10), (4,4), "town"
+DOOR: false, closed, north, random
+ALTAR:(02,02),align[0],shrine
+MONSTER: 'h', "dwarf", random
+
+SUBROOM: "ordinary", lit, (23,11), (2,3), "town"
+DOOR: false, locked, west, random
+
+SUBROOM: "ordinary", lit, (27,3), (3,3), "town"
+DOOR: false, closed, south, random
+MONSTER: 'h', "dwarf", random
+
+SUBROOM: "chestroom", unlit, (26,11), (4,3), "town"
+DOOR: false, closed, north, random
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, up
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, down
+TRAP: random, random
+MONSTER: 'h', "dwarf", random
+
+ROOM: "ordinary" , random, random, random, random
+OBJECT: '(', "oil lamp", random
+MONSTER: 'h', "dwarf", random
+
+ROOM: "ordinary" , random, random, random, random
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+
+RANDOM_CORRIDORS
+
+
+# Minetown variant 2
+# "Town Square"
+#
+LEVEL: "minetn-2"
+ROOM: "ordinary" , lit, (3,3), (center,center), (31,15)
+NAME: "town"
+FOUNTAIN: (17, 5)
+FOUNTAIN: (13, 8)
+
+# The Town Watch
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+
+SUBROOM: "ordinary", random, (2,0), (2,2), "town"
+DOOR: false, closed, west, random
+
+SUBROOM: "ordinary", unlit, (5,0), (2,2), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", random, (8,0), (2,2), "town"
+DOOR: false, closed, east, random
+
+SUBROOM: "ordinary", lit, (16,0), (2,2), "town"
+DOOR: false, closed, west, random
+
+SUBROOM: "chestroom", unlit, (19,0), (2,2), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", random, (22,0), (2,2), "town"
+DOOR: false, locked, south, random
+MONSTER: 'G', "gnome", random
+
+SUBROOM: "ordinary", unlit, (25,0), (2,2), "town"
+DOOR: false, closed, east, random
+
+SUBROOM: "ordinary", lit, (3,5), (2,2), "town"
+DOOR: false, closed, north, random
+
+SUBROOM: "ordinary", lit, (6,5), (2,2), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", random, (9,5), (2,2), "town"
+DOOR: false, locked, north, random
+MONSTER: 'G', "gnome", random
+
+SUBROOM: "shop" , lit, (2,10), (4,3), "town"
+DOOR: false, closed, west, random
+
+SUBROOM: "tool shop", lit, (24,10), (4,3), "town"
+CHANCE: 90
+DOOR: false, closed, east, random
+
+SUBROOM: "food shop", lit, (24,5), (3,4), "town"
+CHANCE: 90
+DOOR: false, closed, north, random
+
+SUBROOM: "candle shop", lit, (11,10), (4,3), "town"
+DOOR: false, closed, east, random
+
+SUBROOM: "ordinary", unlit, (7,10), (3,3), "town"
+DOOR: false, locked, north, random
+MONSTER: 'G', "gnome", random
+
+SUBROOM: "temple", lit, (19,5), (4,4), "town"
+DOOR: false, closed, north, random
+ALTAR:(02,02),align[0],shrine
+MONSTER: 'G', "gnomish wizard", random
+MONSTER: 'G', "gnomish wizard", random
+
+SUBROOM: "ordinary", lit, (19,10), (4,3), "town"
+DOOR: false, locked, west, random
+MONSTER: 'G', "gnome lord", random
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, up
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, down
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+
+ROOM: "ordinary" , random, random, random, random
+MONSTER: 'h', "dwarf", random
+
+ROOM: "ordinary" , random, random, random, random
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+
+RANDOM_CORRIDORS
+
+
+# Minetown variant 3 by Kelly Bailey
+# "Alley Town"
+#
+LEVEL: "minetn-3"
+ROOM: "ordinary",lit,(3,3),(center,center),(31,15)
+NAME: "town"
+FOUNTAIN:(01,06)
+FOUNTAIN:(29,13)
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+MONSTER: 'a', "soldier ant", random
+MONSTER: 'a', random, random
+MONSTER: 'a', random, random
+MONSTER: 'G', "gnome lord", random, hostile
+OBJECT: '%', "slime mold", random
+
+SUBROOM:"ordinary",random,(2,2),(2,2),"town"
+DOOR: false,closed,south,random
+
+SUBROOM:"tool shop",lit,(5,3),(2,3),"town"
+CHANCE: 30
+DOOR: false,closed,south,random
+
+SUBROOM:"ordinary",random,(2,10),(2,3),"town"
+DOOR: false, locked, north, random
+
+SUBROOM:"ordinary",random,(5,9),(2,2),"town"
+DOOR: false,closed,north,random
+
+SUBROOM:"temple",lit,(10,2),(3,4),"town"
+DOOR: false,closed,east,random
+ALTAR:(1,1),align[0],shrine
+MONSTER: 'G', "gnomish wizard", random
+MONSTER: 'G', "gnomish wizard", random
+
+SUBROOM:"ordinary",random,(11,7),(2,2),"town"
+DOOR: false,closed,west,random
+
+SUBROOM:"shop",lit,(10,10),(3,3),"town"
+DOOR:false,closed,west,random
+
+SUBROOM:"ordinary",random,(14,8),(2,2),"town"
+DOOR:false,locked,north,random
+
+SUBROOM:"ordinary",random,(14,11),(2,2),"town"
+DOOR:false,closed,south,random
+
+SUBROOM:"tool shop",lit,(17,10),(3,3),"town"
+CHANCE:40
+DOOR:false,closed,north,random
+
+SUBROOM:"ordinary",random,(21,11),(2,2),"town"
+DOOR:false,locked,east,random
+
+SUBROOM:"food shop",lit,(26,8),(3,2),"town"
+CHANCE:50
+DOOR:false,closed,west,random
+
+SUBROOM:"chestroom",random,(16,2),(2,2),"town"
+DOOR:false,closed,west,random
+
+SUBROOM:"ordinary",random,(19,2),(2,2),"town"
+DOOR:false,closed,north,random
+
+SUBROOM:"wand shop",lit,(19,5),(3,2),"town"
+CHANCE:80
+DOOR:false,closed,west,random
+
+SUBROOM: "candle shop",lit,(25,2),(3,3),"town"
+DOOR:false,closed,south,random
+
+ROOM: "ordinary", random, random, random, random
+STAIR: random, up
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, down
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+
+ROOM: "ordinary" , random, random, random, random
+MONSTER: 'h', "dwarf", random
+OBJECT: '%', "slime mold", random
+
+ROOM: "ordinary" , random, random, random, random
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+
+RANDOM_CORRIDORS
+
+
+# Minetown variant 4 by Kelly Bailey
+# "College Town"
+#
+LEVEL: "minetn-4"
+ROOM: "ordinary",lit,(3,3),(center,center),(30,15)
+NAME: "town"
+FOUNTAIN:(08,07)
+FOUNTAIN:(18,07)
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+
+SUBROOM:"book shop",lit,(4,2),(3,3),"town"
+DOOR: false,closed,south,random
+
+SUBROOM:"chestroom",random,(8,2),(2,2),"town"
+DOOR: false,closed,south,random
+
+SUBROOM:"temple",lit,(11,3),(5,4),"town"
+DOOR: false,closed,south,random
+ALTAR:(2,1),align[0],shrine
+MONSTER: 'G', "gnomish wizard", random
+MONSTER: 'G', "gnomish wizard", random
+
+SUBROOM:"ordinary",random,(19,2),(2,2),"town"
+DOOR: false,closed,south,random
+MONSTER: 'G', random, random
+
+SUBROOM:"candle shop",lit,(22,2),(3,3),"town"
+DOOR:false,closed,south,random
+
+SUBROOM:"ordinary",random,(26,2),(2,2),"town"
+DOOR:false,locked,east,random
+MONSTER: 'G',random,random
+
+SUBROOM:"tool shop",lit,(3,10),(3,3),"town"
+CHANCE:90
+DOOR:false,closed,north,random
+
+SUBROOM:"ordinary",random,(7,11),(2,2),"town"
+DOOR:false,locked,south,random
+MONSTER: 'k',"kobold shaman",random
+MONSTER: 'k',"kobold shaman",random
+MONSTER: 'f',"kitten",random
+MONSTER: 'f',random,random
+
+SUBROOM:"food shop",lit,(10,11),(3,2),"town"
+CHANCE:90
+DOOR:false,closed,east,random
+
+SUBROOM:"ordinary",random,(17,11),(2,2),"town"
+DOOR:false,closed,west,random
+
+SUBROOM:"ordinary",random,(20,10),(2,2),"town"
+DOOR:false,locked,north,random
+MONSTER:'G',random,random
+
+SUBROOM:"shop",lit,(23,10),(3,3),"town"
+CHANCE:80
+DOOR:false,closed,north,random
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, up
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, down
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+
+ROOM: "ordinary" , random, random, random, random
+MONSTER: 'h', "dwarf", random
+
+ROOM: "ordinary" , random, random, random, random
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+
+RANDOM_CORRIDORS
+
+
+# "Grotto Town" by Kelly Bailey
+#
+MAZE: "minetn-5",' '
+GEOMETRY:center,center
+#         1         2         3         4         5         6         7
+#12345678901234567890123456789012345678901234567890123456789012345678901234
+MAP
+-----         ---------                                                    
+|...---- ------.......--    -------                       ---------------  
+|......---.........--..|    |.....|          -------      |.............|  
+--..-....-..---------..|    |.(...|          |.....|     --+---+--.----+-  
+ ----.........-     ----    |.....|  ------  --....----  |..-...--.-.+..|  
+    ----.-....|---  -----   ---+---  |..+.--  ---..-..----..---+-..---..|  
+       -----..|..----...--    |.|    |..|..|   ---+-.....-+--........--+-  
+    ------ |..|....-.....---- |.|    |..|.------......-.................|  
+    |....| --...............---.--   ----.+..|-.......--..--------+--..--  
+    |....|  |......---...........----- |..|..|-...{....---|.........|..--  
+    ---+--------....-------..........---..|..|--.......|  |.........|...|  
+ ------.---...--...--..-..--...-.......--.-----...-....--------------...|  
+ |..|-.........-..---..-..---.....---...|.--..-..---...-|....| |.......--  
+ |..+...............-+---+-----..---....|..........--...+....| |.-------   
+-----.....{....----...............-..........---...-...-|....| |.|...S.    
+|..............-- --+--.---------.........--..-........------| |.|...|-----
+-+-----.........| |...|.|....|  --.......------...|....--..-----.--+-|....|
+|...| --..------- |...|.+....|   ---...---    --..|...--.....--......+..-+|
+|...|  ----       ------|....|     -----       -----.....---......{..|..|.|
+-----                   ------                     ------- ----------------
+ENDMAP
+
+# Coordinate Changes for the ROWNO=20 project:
+# * Columns 00-14, rows  5+ move up one line
+# * Columns 15-26, rows 11+ move up one line
+# * Columns 27-33, rows 12+ move up one line
+# * Columns 34-46, rows 16+ move up one line
+# * Columns 47-54, rows 11+ move up one line
+# * Columns 55-61, rows 12+ move up one line
+# * Column  62,    rows 19+ move up one line
+# * Columns 63-68, row  20  moves up one line
+# * Column  69,    rows 17+ move up one line
+# * Columns 70-74, rows 15+ move up one line
+
+STAIR:(01,01),up
+STAIR:(46,03),down
+FOUNTAIN:(50,09)
+FOUNTAIN:(10,14)
+FOUNTAIN:(66,18)
+
+REGION:(00,00,74,19),unlit,"ordinary"
+REGION:(09,12,11,16),lit,"ordinary"
+REGION:(08,13,12,15),lit,"ordinary"
+REGION:(49,07,51,10),lit,"ordinary"
+REGION:(48,08,52,10),lit,"ordinary"
+REGION:(64,17,68,19),lit,"ordinary"
+REGION:(37,13,39,16),lit,"ordinary"
+REGION:(36,14,40,16),lit,"ordinary"
+REGION:(59,02,72,10),lit,"ordinary"
+
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome lord", random
+MONSTER: 'G', "gnome lord", random
+MONSTER: 'h', "dwarf", random
+MONSTER: 'h', "dwarf", random
+MONSTER: 'h', "dwarf", random
+
+# The shops
+REGION:(25,16,28,18),lit,"candle shop"
+DOOR:closed,(24,17)
+REGION:(59,9,67,10),lit,"shop"
+DOOR:closed,(66,08)
+REGION:(57,12,60,14),lit,"tool shop"
+DOOR:closed,(56,13)
+REGION:(05,08,08,09),lit,"food shop"
+DOOR:closed,(07,10)
+# Gnome homes
+DOOR:closed,(04,13)
+DOOR:locked,(01,16)
+MONSTER: 'G', "gnomish wizard", (02,18)
+DOOR:locked,(20,15)
+MONSTER: 'G', random, (20,17)
+DOOR:random,(21,13)
+DOOR:random,(25,13)
+DOOR:random,(42,08)
+DOOR:locked,(40,05)
+MONSTER: 'G', random, (38,07)
+DOOR:random,(59,03)
+DOOR:random,(58,06)
+DOOR:random,(63,03)
+DOOR:random,(63,05)
+DOOR:locked,(71,03)
+DOOR:locked,(71,06)
+DOOR:closed,(69,04)
+DOOR:closed,(67,16)
+MONSTER: 'G', "gnomish wizard", (67,14)
+OBJECT: '=', random, (70,14)
+DOOR:locked,(69,17)
+MONSTER: 'G', "gnome lord", (71,18)
+DOOR:locked,(73,17)
+OBJECT: '(', "chest", (73,18)
+DOOR:locked,(50,06)
+OBJECT: '(', random, (50,03)
+OBJECT: '`', "statue", (38,15), "gnome king", 1
+# Temple
+REGION:(29,02,33,04),lit,"temple"
+DOOR:closed,(31,05)
+ALTAR:(31,03),align[0],shrine
+
+
+# "Bustling Town" by Kelly Bailey
+#
+MAZE: "minetn-6",' '
+INIT_MAP:'.','-',true,true,lit,true
+GEOMETRY:center,top
+MAP
+.-----................----------------.-
+.|...|................|...|..|...|...|..
+.|...+..--+--.........|...|..|...|...|..
+.|...|..|...|..-----..|...|..|-+---+--..
+.-----..|...|--|...|..--+---+-.........|
+........|...|..|...+.............-----..
+........-----..|...|......--+-...|...|..
+.----...|...|+------..{...|..|...+...|..
+.|..+...|...|.............|..|...|...|..
+.|..|...|...|-+-.....---+-------------.|
+.----...--+--..|..-+-|..................
+...|........|..|..|..|----....--------..
+...|..T.....----..|..|...+....|......|..
+...|-....{........|..|...|....+.....(|..
+...--..-....T.....--------....|......|..
+.......--.....................|---------
+.......---....................|        |
+ENDMAP
+
+REGION:(00,00,38,16),lit,"ordinary"
+STAIR:levregion(00,03,19,19),(0,0,39,15),up
+STAIR:levregion(60,03,74,19),(0,0,39,15),down
+FOUNTAIN:(22,07)
+FOUNTAIN:(09,13)
+REGION:(13,5,14,6),unlit,"ordinary"
+REGION:(9,7,11,9),lit,"candle shop"
+REGION:(16,4,18,6),lit,"tool shop"
+REGION:(23,1,25,3),lit,"shop"
+REGION:(22,12,24,13),lit,"food shop"
+REGION:(31,12,36,14),lit,"temple"
+ALTAR:(35,13),align[0],shrine
+
+DOOR:closed,(5,2)
+DOOR:locked,(4,8)
+DOOR:closed,(10,2)
+DOOR:closed,(10,10)
+DOOR:locked,(13,7)
+DOOR:locked,(14,9)
+DOOR:closed,(19,5)
+DOOR:closed,(19,10)
+DOOR:closed,(24,4)
+DOOR:closed,(24,9)
+DOOR:closed,(25,12)
+DOOR:closed,(28,4)
+DOOR:locked,(28,6)
+DOOR:closed,(30,13)
+DOOR:closed,(31,3)
+DOOR:closed,(35,3)
+DOOR:closed,(33,7)
+
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", (14,6)
+MONSTER: 'G', "gnome lord", (14,5)
+MONSTER: 'G', "gnome", (27,8)
+MONSTER: 'G', "gnome lord", random
+MONSTER: 'G', "gnome lord", random
+MONSTER: 'h', "dwarf", random
+MONSTER: 'h', "dwarf", random
+MONSTER: 'h', "dwarf", random
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+
+
+# "Bazaar Town" by Kelly Bailey
+#
+LEVEL: "minetn-7"
+ROOM: "ordinary" , lit, (3,3), (center,center), (32,15)
+NAME: "town"
+FOUNTAIN: (13, 07)
+FOUNTAIN: (12, 13)
+
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watchman", random, peaceful
+MONSTER: '@', "watch captain", random, peaceful
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'Y',"monkey",random
+MONSTER:'Y',"monkey",random
+MONSTER:'Y',"monkey",random
+MONSTER:'Y',"monkey",random
+MONSTER:'n',"wood nymph",random
+MONSTER:'n',"wood nymph",random
+
+SUBROOM: "armor shop", lit, (3,2), (4,2), "town"
+CHANCE: 30
+DOOR: false, closed, south, random
+
+SUBROOM: "scroll shop", lit, (8,2), (2,2), "town"
+CHANCE: 10
+DOOR: false, closed, north, random
+
+SUBROOM: "ring shop", lit, (8,5), (2,2), "town"
+CHANCE: 15
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", lit, (11,2), (3,4), "town"
+MONSTER:'G',"gnome",random
+MONSTER:'Y',"monkey",random
+MONSTER:'Y',"monkey",random
+MONSTER:'Y',"monkey",random
+MONSTER:'n',random,random
+DOOR: false, closed, south, random
+DOOR: true, locked, east, random
+
+SUBROOM: "gift shop", random, (15,2), (4,2), "town"
+CHANCE: 5
+DOOR: false, closed, south, 0
+MONSTER: 'n', random, random
+
+SUBROOM: "chestroom", random, (17,5), (2,2), "town"
+DOOR: false, closed, south, random
+
+SUBROOM: "music shop", unlit, (20,2), (2,2), "town"
+CHANCE: 10
+DOOR: false, locked, east, random
+MONSTER: 'G',"gnome king",random
+
+SUBROOM: "food shop", lit, (20,5), (2,3), "town"
+CHANCE: 50
+DOOR: false, closed, south, random
+
+SUBROOM: "ordinary", random, (3,7), (2,2), "town"
+DOOR: false, closed, east, random
+
+SUBROOM: "tool shop", lit, (3,10), (2,3), "town"
+CHANCE: 50
+DOOR: false, closed, south, random
+
+SUBROOM: "candle shop", lit, (6,10),(3,3), "town"
+DOOR: false, closed, north, random
+
+SUBROOM: "ordinary", random, (12,10), (2,2), "town"
+DOOR: false, locked, west, random
+MONSTER: 'G',random,random
+
+SUBROOM: "shop", lit, (15,10), (2,3), "town"
+DOOR: false, closed, north, random
+
+SUBROOM: "weapon shop", lit, (18,11), (4,2), "town"
+CHANCE: 30
+DOOR: false, closed, north, random
+
+SUBROOM: "ordinary", random, (23,11), (2,2), "town"
+DOOR: false, closed, south, random
+DOOR: true, locked, north, random
+SINK: (01,00)
+
+SUBROOM: "food shop", lit, (26,11), (3,2), "town"
+CHANCE: 50
+DOOR: false, closed, east, random
+
+SUBROOM: "tool shop", lit, (26,2), (3,3), "town"
+CHANCE: 30
+DOOR: false, closed, west, random
+
+SUBROOM: "temple", lit, (25,8), (4,2), "town"
+DOOR: false, closed, west, random
+ALTAR:(02,01),align[0],shrine
+MONSTER: 'G', "gnomish wizard", random
+MONSTER: 'G', "gnomish wizard", random
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, up
+
+ROOM: "ordinary" , random, random, random, random
+STAIR: random, down
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+MONSTER: 'G', "gnome", random
+
+ROOM: "ordinary" , random, random, random, random
+MONSTER: 'h', "dwarf", random
+  
+ROOM: "ordinary" , random, random, random, random
+TRAP: random, random
+MONSTER: 'G', "gnome", random
+
+RANDOM_CORRIDORS
+  
+# "Creek Town" by L.
+# No fountains in this town, for obvious reasons.
+#
+MAZE: "minetn-8",' '
+GEOMETRY:left,center
+#         1         2         3         4         5         6         7
+#123456789012345678901234567890123456789012345678901234567890123456789012345
+MAP
+                ----            ---         |www|                 ---       
+                |..----         |.-----  ----www|                --.--  --- 
+     ----  ---- |.....----------|.....-- |..www--                |...----.--
+ ----|..|  |..|------...........|......---.www--        ---      --...||...|
+ |...+..----..|.....|---........|..........ww.| ---------.-----   |...-|..--
+ |...|....|...+.....|..|.-----------+-....w.w.---.............|   --...|..| 
+ |...|........|.....|..|.|..|..|.....|....ww......--------+--.--------....| 
+ |---|........-------+--.|F+-F+|.....|...wwww.....|.....|...|..--..| --...--
+ |  |....................|.....|-----|..wwPww.....|.....|...|......----....|
+ | --...........-+-----+-|.....| |...|.wwPPww.....|.....|---|.|...........--
+ ---...---+---..|..|..|..|.....| |...|.wwPPw......--+---|...|.|--.......--- 
+|--....|.....|..|..|..|..--+-----|...|..wPPww...........|...|.|...--....|   
+|......|(....|..----+-----.......|...|.wwwPPww..........--+--.|.----.|..--  
+|.T....|.....|..................--+---.wwwwPww-+---+-...........|  ----..|  
+|......|.....|...------.........|.....ww..wPww|..|..|.........------- --.-- 
+--..T..--------..+....|.....------...ww..wwPw.|..|..|....----.......|  ---  
+ --.........-----|....|.....+..| |..w.w..wwww.-------...--..--......---     
+---.----.....----------.....|..| |.www....www................|........--    
+|...| |.....................|-----www.....www.----------.----.....--...|    
+----- -----------------------  --www.---.wwww.| |      ---  --.|..|-----    
+                               |www--- ---wwww| |            ------         
+ENDMAP
+REGION:(01,01,75,20),lit,"ordinary"
+REGION:(2,4,4,6),lit,"candle shop"
+REGION:(15,4,19,6),lit,"shop"
+REGION:(34,9,36,12),lit,"scroll shop"
+REGION:(51,07,55,09),lit,"food shop"
+REGION:(8,11,12,14),lit,"temple"
+ALTAR:(10,13),align[0],shrine
+
+# Protect the watch-house walls
+NON_DIGGABLE:(25,5,31,11)
+
+# Stairs
+STAIR:levregion(60,12,75,19),(0,0,15,20),up
+STAIR:levregion(60,03,75,11),(0,0,15,20),down
+
+# Doors
+DOOR:closed,(5,4)
+DOOR:closed,(14,5)
+DOOR:closed,(10,10)
+DOOR:locked,(17,9)
+DOOR:locked,(20,12)
+DOOR:locked,(21,7)
+DOOR:locked,(23,9)
+DOOR:locked,(17,15)
+DOOR:locked,(27,7)
+DOOR:locked,(30,7)
+DOOR:open,(27,11)
+DOOR:locked,(28,16)
+DOOR:locked,(36,5)
+DOOR:closed,(34,13)
+DOOR:locked,(47,13)
+DOOR:closed,(52,10)
+DOOR:closed,(51,13)
+DOOR:locked,(58,6)
+DOOR:locked,(58,12)
+
+# Traps
+TRAP:"board",random
+TRAP:"trap door",random
+TRAP:"teleport",random
+TRAP:"teleport",random
+TRAP:"teleport",random
+TRAP:"teleport",random
+TRAP:"teleport",(08,07)
+
+# Furniture
+OBJECT:'(',"chest",(18,11)
+OBJECT:'(',"chest",(20,10)
+OBJECT:'(',"chest",(21,15)
+OBJECT:'`',"statue",(8,7),"gnome king",1
+OBJECT: '(',"chest",(47,15)
+
+# Junk
+OBJECT:random,random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+
+# Guards
+MONSTER:'@',"watch captain",random,peaceful
+MONSTER:'@',"watchman",(27,9),peaceful
+MONSTER:'@',"watchman",(8,7),peaceful
+MONSTER:'@',"watchman",(25,14),peaceful
+MONSTER:'@',"watchman",(50,15),peaceful
+
+# Watchdog
+MONSTER:'d',"large dog",(30,8),peaceful,asleep
+
+# Citizens
+MONSTER:'G',"gnome",(17,10),hostile
+MONSTER:'G',"gnome king",(20,16),hostile
+MONSTER:'G',random,(47,14)
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'h',"dwarf lord",random
+MONSTER:'h',"quantum mechanic",random
+MONSTER:'h',"quantum mechanic",random
+MONSTER:'h',"hobbit",random
+MONSTER:'h',"bugbear",random
+MONSTER:'h',"bugbear",random
+MONSTER:'h',"dwarf",random
+
+# River feeders
+MONSTER[75%]:'K',"jellyfish",random
+MONSTER[75%]:'K',"jellyfish",random
+MONSTER[75%]:'K',"jellyfish",random
+MONSTER[75%]:'K',"jellyfish",random
+MONSTER[75%]:'K',"jellyfish",random
+MONSTER[25%]:'K',"piranha",random
+MONSTER[25%]:'K',"piranha",random
+MONSTER[25%]:'K',"piranha",random
+MONSTER[25%]:'K',"piranha",random
+MONSTER[25%]:'K',"piranha",random
+
+# Mine end level variant 2
+# "Gnome King's Wine Cellar"
+#
+MAZE: "minend-2", ' '
+GEOMETRY:center,center
+MAP
+---------------------------------------------------------------------------
+|...................................................|                     |
+|.|---------S--.--|...|--------------------------|..|                     |
+|.||---|   |.||-| |...|..........................|..|                     |
+|.||...| |-|.|.|---...|.............................|                ..   |
+|.||...|-|.....|....|-|..........................|..|.               ..   |
+|.||.....|-S|..|....|............................|..|..                   |
+|.||--|..|..|..|-|..|----------------------------|..|-.                   |
+|.|   |..|..|...(|..................................|...                  |
+|.|   |..|..|----|..-----------------------------|..|....                 |
+|.|---|..|--|.......|----------------------------|..|.....                |
+|...........|----.--|......................|     |..|.......              |
+|-----------|...|.| |------------------|.|.|-----|..|.....|..             |
+|-----------|.{.|.|--------------------|.|..........|.....|....           |
+|...............|.S......................|-------------..-----...         |
+|.--------------|.|--------------------|.|.........................       |
+|.................|                    |.....................|........    |
+---------------------------------------------------------------------------
+ENDMAP
+
+# Dungeon Description
+FOUNTAIN:(14,13)
+REGION:(23,03,48,06),lit,"ordinary"
+REGION:(21,06,22,06),lit,"ordinary"
+REGION:(14,04,14,04),unlit,"ordinary"
+REGION:(10,05,14,08),unlit,"ordinary"
+REGION:(10,09,11,09),unlit,"ordinary"
+REGION:(15,08,16,08),unlit,"ordinary"
+# Secret doors
+DOOR:locked,(12,02)
+DOOR:locked,(11,06)
+# Stairs
+STAIR:(36,04),up
+# Non diggable walls
+NON_DIGGABLE:(00,00,52,17)
+NON_DIGGABLE:(53,00,74,00)
+NON_DIGGABLE:(53,17,74,17)
+NON_DIGGABLE:(74,01,74,16)
+NON_DIGGABLE:(53,07,55,07)
+NON_DIGGABLE:(53,14,61,14)
+# The Gnome King's wine cellar.
+ENGRAVING:(12,03),engrave,"You are now entering the Gnome King's wine cellar."
+ENGRAVING:(12,04),engrave,"Trespassers will be persecuted!"
+OBJECT:'!',"booze",(10,07)
+OBJECT:'!',"booze",(10,07)
+OBJECT:'!',random,(10,07)
+OBJECT:'!',"booze",(10,08)
+OBJECT:'!',"booze",(10,08)
+OBJECT:'!',random,(10,08)
+OBJECT:'!',"booze",(10,09)
+OBJECT:'!',"booze",(10,09)
+OBJECT:'!',"object detection",(10,09)
+# Objects
+# The Treasure chamber...
+OBJECT:'*',"diamond",(69,04)
+OBJECT:'*',random,(69,04)
+OBJECT:'*',"diamond",(69,04)
+OBJECT:'*',random,(69,04)
+OBJECT:'*',"emerald",(70,04)
+OBJECT:'*',random,(70,04)
+OBJECT:'*',"emerald",(70,04)
+OBJECT:'*',random,(70,04)
+OBJECT:'*',"emerald",(69,05)
+OBJECT:'*',random,(69,05)
+OBJECT:'*',"ruby",(69,05)
+OBJECT:'*',random,(69,05)
+OBJECT:'*',"ruby",(70,05)
+OBJECT:'*',"amethyst",(70,05)
+OBJECT:'*',random,(70,05)
+OBJECT:'*',"amethyst",(70,05)
+OBJECT:'*',"luckstone",(70,05)
+# Scattered gems...
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'(',random,random
+OBJECT:'(',random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+# Random traps
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+# Random monsters.
+MONSTER:'G',"gnome king",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'G',"gnome lord",random
+MONSTER:'G',"gnomish wizard",random
+MONSTER:'G',"gnomish wizard",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'G',"gnome",random
+MONSTER:'h',"hobbit",random
+MONSTER:'h',"hobbit",random
+MONSTER:'h',"dwarf",random
+MONSTER:'h',"dwarf",random
+MONSTER:'h',"dwarf",random
+MONSTER:'h',random,random
+
+
+# "Catacombs" by Kelly Bailey
+# Relies on some very specific behavior of MAZEWALK.
+#
+MAZE:"minend-3",'-'
+FLAGS:nommap
+GEOMETRY:center,bottom
+MAP
+ - - - - - - - - - - -- -- - - . - - - - - - - - - -- - - -- - - - - . - - |
+------...---------.-----------...-----.-------.-------     ----------------|
+ - - - - - - - - - - - . - - - . - - - - - - - - - - -- - -- - . - - - - - |
+------------.---------...-------------------------.---   ------------------|
+ - - - - - - - - - - . . - - --- - . - - - - - - - - -- -- - - - - |.....| |
+--.---------------.......------------------------------- ----------|.....S-|
+ - - - - |.. ..| - ....... . - - - - |.........| - - - --- - - - - |.....| |
+----.----|.....|------.......--------|.........|--------------.------------|
+ - - - - |..{..| - - -.... . --- - -.S.........S - - - - - - - - - - - - - |
+---------|.....|--.---...------------|.........|---------------------------|
+ - - - - |.. ..| - - - . - - - - - - |.........| - --- . - - - - - - - - - |
+----------------------...-------.---------------------...------------------|
+---..| - - - - - - - - . --- - - - - - - - - - - - - - . - - --- - - --- - |
+-.S..|----.-------.------- ---------.-----------------...----- -----.-------
+---(.| - - - - - - - -- - - -- . - - - - - . - - - . - . - - -- -- - - - -- 
+-.S..|--------.---.---       -...---------------...{.---------   ---------  
+--|. - - - - - - - -- - - - -- . - - - --- - - - . . - - - - -- - - - - - - 
+ENDMAP
+
+RANDOM_PLACES:(1,15),(68,6),(1,13)
+NON_DIGGABLE:(67,3,73,7)
+NON_DIGGABLE:(0,12,2,16)
+FOUNTAIN:(12,08)
+FOUNTAIN:(51,15)
+REGION:(0,0,75,16),unlit,"ordinary"
+REGION:(38,6,46,10),lit,"ordinary"
+DOOR:closed,(37,8)
+DOOR:closed,(47,8)
+DOOR:closed,(73,5)
+DOOR:closed,(2,15)
+MAZEWALK:(36,8),west
+STAIR:(42,8),up
+
+# Objects
+OBJECT:'*',"diamond",random
+OBJECT:'*',random,random
+OBJECT:'*',"diamond",random
+OBJECT:'*',random,random
+OBJECT:'*',"emerald",random
+OBJECT:'*',random,random
+OBJECT:'*',"emerald",random
+OBJECT:'*',random,random
+OBJECT:'*',"emerald",random
+OBJECT:'*',random,random
+OBJECT:'*',"ruby",random
+OBJECT:'*',random,random
+OBJECT:'*',"ruby",random
+OBJECT:'*',"amethyst",random
+OBJECT:'*',random,random
+OBJECT:'*',"amethyst",random
+OBJECT:'*',"luckstone",place[0]
+OBJECT:'*',"flint",place[1]
+OBJECT:'?',random,random
+OBJECT:'?',random,random
+OBJECT:'?',random,random
+OBJECT:'?',random,random
+OBJECT:'?',random,random
+OBJECT:'+',random,random
+OBJECT:'+',random,random
+OBJECT:'+',random,random
+OBJECT:'+',random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+# One-time annoyance factor
+TRAP:"level teleport",place[0]
+TRAP:"level teleport",place[1]
+MONSTER:'M',random,random
+MONSTER:'M',random,random
+MONSTER:'M',random,random
+MONSTER:'M',random,random
+MONSTER:'M',random,random
+MONSTER:'M',"ettin mummy",random
+MONSTER:'V',random,random
+MONSTER:'Z',random,random
+MONSTER:'Z',random,random
+MONSTER:'Z',random,random
+MONSTER:'Z',random,random
+MONSTER:'Z',random,random
+MONSTER:'V',random,random
+MONSTER:'e',random,random
+MONSTER:'e',random,random
+MONSTER:'e',random,random
+MONSTER:'e',random,random
+
+# "Orc Temple" by Khor
+# In this variant of the mines end a group of orcs have found a randomly generated figurine of a demon and worship it
+#
+MAZE:"minend-1",' '
+FLAGS:nommap
+GEOMETRY:center,center
+#0         1         2         3         4         5         6         7
+#0123456789012345678901234567890123456789012345678901234567890123456789012345
+MAP
+0                                                                   |-----|
+1                                             -------              |-LLLLL-|
+2                         ---------------     |.....|             |-LL...LL-|
+3                        -|..|..........|     |.....|        -----|LL.....LL|
+4                       -|...F..........|     |.....|        |...||L.......L|
+5         |-------|    -|....|-+------+-|    ----+----       |...||L.......L|
+6        |-.......-|  -|.....F..........|----|.......|---------+---L.......L|
+7 -------|.........|--|.....--...............F.......F.....||.....|LL.....LL|
+8-|..........}}}...........-|..............................--.....|-LL...LL-|
+9|...........}{}...........+...............................+...(..||-LL.LL-|
+0-|..........}}}...........-|..............................--.....| |--S--|
+1 -------|.........|--|.....--...............F.......F.....||.....|    .     
+2        |-.......-|  -|.....F..........|----|.......|---------S---          
+3         |-------|    -|....|-+------+-|    ----+----         .             
+4                       -|...F..........|     |.....|                        
+5                        -|..|..........|     |.....|                        
+6                         ---------------     |.....|                        
+7                                             -------                     ..}
+8                                                                         .}}
+9                                                                        .}}{
+ENDMAP
+
+RANDOM_PLACES:(0,18),(0,12),(2,18),(12,14),(20,12),(16,16),(72,18),(52,14),(44,14)
+REGION:(0,0,75,19),lit,"ordinary"
+NON_DIGGABLE:(0,0,75,19)
+STAIR:(1,9),up
+
+#SOME ORCS (The religious kind)
+MONSTER:'o',"goblin",random
+MONSTER:'o',"goblin",random
+MONSTER:'o',"hobgoblin",random
+MONSTER:'o',"hobgoblin",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"hill orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',"Mordor orc",random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+MONSTER:'o',random,random
+
+#SECRET CAVE
+MAZEWALK:(62,15),south
+ALTAR:(70,5),noalign,shrine
+DOOR:closed,(62,12)
+DOOR:closed,(70,10)
+TRAP:"rust",random
+TRAP:"board",random
+OBJECT:'(',"figurine",(70,5),random,"balrog",1
+OBJECT:'*',"luckstone",place[0]
+OBJECT:'*',"flint",place[1]
+OBJECT:'*',random,place[2]
+OBJECT:'*',random,place[3]
+OBJECT:'*',random,place[4]
+OBJECT:'*',random,place[5]
+OBJECT:'*',random,place[6]
+OBJECT:'*',random,place[7]
+OBJECT:'*',random,place[8]
+OBJECT:'*',random,place[9]
+MONSTER:'o',"orc shaman",(69,3),asleep
+MONSTER:'o',"orc shaman",(71,3),asleep
+MONSTER:'o',"orc shaman",(68,4),asleep
+MONSTER:'o',"orc shaman",(72,4),asleep
+MONSTER:'o',"orc shaman",(68,6),asleep
+MONSTER:'o',"orc shaman",(72,6),asleep
+MONSTER:'o',"orc shaman",(69,7),asleep
+MONSTER:'o',"orc shaman",(71,7),asleep
+
+#TEMPLE
+ENGRAVING:(55,9),burn,"Blessed are the destroyers of false hope, for they are the true Messiahs."
+MONSTER:'o',"orc shaman",(55,9),asleep
+ENGRAVING:(48,3),burn,"Why should you not hate your enemies. If you love them does that not place you at their mercy?"
+MONSTER:'o',"orc shaman",(48,3),asleep
+ENGRAVING:(48,15),burn,"Cursed are the god-adorers, for they shall be shorn sheep!"
+MONSTER:'o',"orc shaman",(48,15),asleep
+ENGRAVING:(25,09),burn,"Dagul protects our doors. Dagul protects our souls."
+MONSTER:'o',"orc shaman",(25,09),asleep
+OBJECT:'`',"statue",(56,8),"orc shaman",1
+OBJECT:'`',"statue",(56,10),"orc-captain",1
+OBJECT:'`',"statue",(50,3),"hill orc",1
+OBJECT:'`',"statue",(46,3),"hill orc",1
+OBJECT:'`',"statue",(50,15),"Mordor orc",1
+OBJECT:'`',"statue",(46,15),"Mordor orc",1
+OBJECT:'`',"statue",(29,03),"Mordor orc",1
+OBJECT:'`',"statue",(32,03),"hill orc",1
+OBJECT:'`',"statue",(35,03),"orc-captain",1
+OBJECT:'`',"statue",(38,03),"orc shaman",1
+OBJECT:'`',"statue",(29,15),"mordor orc",1
+OBJECT:'`',"statue",(32,15),"hill orc",1
+OBJECT:'`',"statue",(35,15),"orc-captain",1
+OBJECT:'`',"statue",(38,15),"orc shaman",1
+OBJECT:'(',"large box",(61,4)
+OBJECT:'(',"large box",(62,4)
+OBJECT:'(',"large box",(63,4)
+ALTAR:(48,2),noalign,shrine
+ALTAR:(48,16),noalign,shrine
+ALTAR:(56,9),noalign,shrine
+DOOR:closed,(58,9)
+DOOR:closed,(26,9)
+DOOR:closed,(30,5)
+DOOR:closed,(37,5)
+DOOR:closed,(48,5)
+DOOR:locked,(62,6)
+DOOR:closed,(30,13)
+DOOR:closed,(37,13)
+DOOR:closed,(48,13)
+# Wake the shamans if anyone tries to take the figurine:
+TRAP:"board",(69,04)
+TRAP:"board",(69,05)
+TRAP:"board",(69,06)
+TRAP:"board",(70,04)
+TRAP:"board",(70,06)
+TRAP:"board",(71,04)
+TRAP:"board",(71,05)
+TRAP:"board",(71,06)
+
+# "Gnomish Sewer"
+MAZE:"minend-4",' '
+GEOMETRY:center,center
+#         1         2         3         4         5         6         7
+#12345678901234567890123456789012345678901234567890123456789012345678901234
+MAP
+  }w      }ww}        ##            }}}} }#}    }}}w}}      }#####}}  #}  w
+ }}       #}}##w##}} #  ##   ##}}}}#######}}}  }w  #} w   }}#     ##}}}# w}
+ }        #} w}}}w###    w} }}}####}}     ###}}w  #} }}w ### w##   }#  #}} 
+ w#      #}      }w  #####w}###     w      w}##}}}w######}    ww }www }}#} 
+  #}   ##}}}      }w    # ##}      w}}w   #}   ####   w}####   }}w  #}  }#}
+  }# w#}}}}w      ww   #    #}    }###}###}          ww     ####}}##}#  }# 
+  }##}}  # }    }w}    #    w### }# }}#w}}###}      #w    ###   ##w}  #}#  
+ }#      #}w   } }}#       w#####}w   }#w  }}###}###     #w        w}  }#  
+w}w###   w#  ##   w}#     w} ### #}    }}w    }}#}}           #####}}}w#}  
+}#  ####w}######   w}w   }#     } #}}}###}}#    }  }}####  ### }}}}#### }} 
+#w    #w###  }###  ###} }#      #}####}  ##}ww }}####   ###w w}   #}  w# w}
+}#      w}     }}w}}} #}w      ###}}}  }}}  }}####         }}#     #}  }#} 
+ }#      w#      }w###}#}     # w}#  }}   }}##}}       }}}}##}}    }#  }#} 
+ w}}     }##}}     }#}  w#  w##}} }#  }} ###}###}}}# }}   #  ###   }##  }# 
+  w}    }#  ##}}}   w##  }##}}}    }# } #    }}####}}w    #    }#}w }##}}# 
+   #   }}     ###}}  w}}##}}        #}##    #}#}}}w# }}}##      }##w }#} # 
+  #w# w   }###}  ### ###w}#w   }w   }#} #   #}}}w  #}}}#}w#     #}}#w }#w}#
+ #} }#}  ##}}w     }}}}w  }##}}w }w}ww}}w#}#}}      ###}} }#   #}   #  }}#}
+#}   w}}#}w       }} }     }}###}  }}### }#}w          #}} }www# }}}# }w   
+ #}}  ww}       }}}}         }}}#####}}}  #}}}}w     w}}  }}}  ww   }#w    
+       }         }}              }}}   }}}}#  }}w  }}}      }}  www  w     
+ENDMAP
+RANDOM_PLACES:(55,04),(18,06),(58,17),(10,16)
+REGION:(00,00,74,20),unlit,"ordinary"
+STAIR:random,up
+
+OBJECT:'/',"cold",place[0]
+MONSTER:'K',"electric eel",place[0]
+MONSTER:'K',"electric eel",place[1]
+MONSTER:'K',"electric eel",place[2]
+MONSTER:'K',"giant eel",random
+MONSTER:'K',random,random
+MONSTER:'K',random,random
+MONSTER:'K',random,random
+MONSTER:'K',random,random
+MONSTER:'K',random,random
+MONSTER:'K',random,random
+MONSTER[50%]:'K',random,random
+MONSTER[50%]:'K',random,random
+MONSTER[50%]:'K',random,random
+MONSTER:'r',"sewer rat",random
+MONSTER:'r',"sewer rat",random
+MONSTER:'r',"sewer rat",random
+MONSTER:'r',"sewer rat",random
+MONSTER:'r',"sewer rat",random
+MONSTER:'r',"sewer rat",random
+MONSTER:'r',random,random
+MONSTER:'r',random,random
+MONSTER:'F',"shrieker",random
+MONSTER:'F',"shrieker",random
+MONSTER:'F',random,random
+MONSTER:'F',random,random
+MONSTER:'F',random,random
+MONSTER:'F',random,random
+MONSTER:'S',random,random
+MONSTER:'S',random,random
+MONSTER:'S',random,random
+MONSTER:'S',random,random
+MONSTER:'l',"crocodile",random
+MONSTER:'l',"crocodile",random
+MONSTER[50%]:'l',"chameleon",random
+MONSTER[50%]:'w',"purple worm",random
+MONSTER[5%]:'g',"gremlin",random
+
+
+OBJECT:'*',"luckstone",random
+OBJECT:'*',"loadstone",random
+OBJECT:'*',"amethyst",random
+OBJECT:'*',"amethyst",random
+OBJECT:'*',"ruby",random
+OBJECT:'*',"ruby",random
+OBJECT:'*',"emerald",random
+OBJECT:'*',"emerald",random
+OBJECT:'*',"diamond",random
+OBJECT:'*',"diamond",random
+OBJECT:'*',"fluorite",random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+OBJECT:'*',random,random
+GOLD:random,random
+GOLD:random,random
+GOLD:random,random
+GOLD:random,random
+OBJECT:'=',random,random
+OBJECT:'=',random,random
+OBJECT:'=',random,random
+OBJECT:'=',random,random
+OBJECT:'=',random,random
+OBJECT:'=',random,random
+OBJECT:'=',random,random
+OBJECT:'"',random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+OBJECT:random,random,random
+# I want to make these boots rotted but don't know how to do that in .des
+OBJECT:'[',"high boots",random
+
+TRAP:"rust",random
+TRAP:"rust",random
+TRAP:"rust",random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+TRAP:random,random
+
+# end mines.des
