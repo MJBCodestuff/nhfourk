@@ -1190,7 +1190,7 @@ unrestrict_weapon_skill(int skill)
 {
     if (skill < P_NUM_SKILLS && P_RESTRICTED(skill)) {
         P_SKILL(skill) = P_UNSKILLED;
-        P_MAX_SKILL(skill) = P_BASIC;
+        P_MAX_SKILL(skill) = P_EXPERT;
         P_ADVANCE(skill) = 0;
     }
 }
