@@ -322,28 +322,38 @@ const struct objclass const_objects[] = {
  *      (2) That the order of the dragon scale mail and dragon scales is the
  *          the same defined in monst.c.
  */
-#define DRGN_ARMR(name,mgc,powerone,powertwo,cost,ac,color)     \
-    ARMORTWO(name,NULL,1,mgc,1,powerone,powertwo,0,5,40,cost,ac,0, \
-          MZ_HUMAN,MZ_HUMAN,ARM_CLOAK,DRAGON_HIDE,color)
-
+#define DRGN_ARMR(name,mgc,power,cost,ac,color)     \
+    ARMOR(name,NULL,1,mgc,1,power,0,5,40,cost,ac,0, \
+          MZ_HUMAN,MZ_HUMAN,ARM_SUIT,DRAGON_HIDE,color)
+/* 3.4.1: dragon scale mail reclassified as "magic" since magic is
+   needed to create them */
+      DRGN_ARMR("gray dragon scale mail",    1, ANTIMAGIC,  1200, 1, CLR_GRAY),
+      DRGN_ARMR("silver dragon scale mail",  1, REFLECTING, 1200, 1, DRAGON_SILVER),
+      DRGN_ARMR("red dragon scale mail",     1, FIRE_RES, 900, 1, CLR_RED),
+      DRGN_ARMR("white dragon scale mail",   1, COLD_RES, 900, 1, CLR_WHITE),
+      DRGN_ARMR("orange dragon scale mail",  1, SLEEP_RES,   900, 1, CLR_ORANGE),
+      DRGN_ARMR("black dragon scale mail",   1, DISINT_RES, 1200, 1, CLR_BLACK),
+      DRGN_ARMR("blue dragon scale mail",    1, SHOCK_RES, 900, 1, CLR_BLUE),
+      DRGN_ARMR("green dragon scale mail",   1, POISON_RES, 900, 1, CLR_GREEN),
+      DRGN_ARMR("yellow dragon scale mail",  1, ACID_RES,   900, 1, CLR_YELLOW),
 /* For now, only dragons leave these. */
 /* 3.4.1: dragon scales left classified as "non-magic"; they confer
    magical properties but are produced "naturally" */
-    DRGN_ARMR("gray dragon scales", 0, ANTIMAGIC, 0, 700, 10, CLR_GRAY),
-    DRGN_ARMR("silver dragon scales", 0, REFLECTING, 0, 700, 10, DRAGON_SILVER),
-    DRGN_ARMR("red dragon scales", 0, FIRE_RES, INFRAVISION, 500, 10, CLR_RED),
+    DRGN_ARMR("gray dragon scales", 0, ANTIMAGIC, 700, 10, CLR_GRAY),
+    DRGN_ARMR("silver dragon scales", 0, REFLECTING, 700, 10, DRAGON_SILVER),
+    DRGN_ARMR("red dragon scales", 0, FIRE_RES, 500, 10, CLR_RED),
     /* Red and white, in addition to the listed properties, also
        provide you with the corresponding breath attack. */
-    DRGN_ARMR("white dragon scales", 0, COLD_RES, PROT_WATERDMG,
+    DRGN_ARMR("white dragon scales", 0, COLD_RES,
               500, 10, CLR_WHITE),
-    DRGN_ARMR("orange dragon scales", 0, SLEEP_RES, FREE_ACTION,
+    DRGN_ARMR("orange dragon scales", 0, SLEEP_RES,
               500, 10, CLR_ORANGE),
-    DRGN_ARMR("black dragon scales", 0, DISINT_RES, DRAIN_RES,
+    DRGN_ARMR("black dragon scales", 0, DISINT_RES,
               700, 10, CLR_BLACK),
-    DRGN_ARMR("blue dragon scales", 0, SHOCK_RES, SEARCHING, 500, 10, CLR_BLUE),
-    DRGN_ARMR("green dragon scales", 0, POISON_RES, SICK_RES,
+    DRGN_ARMR("blue dragon scales", 0, SHOCK_RES, 500, 10, CLR_BLUE),
+    DRGN_ARMR("green dragon scales", 0, POISON_RES,
               500, 10, CLR_GREEN),
-    DRGN_ARMR("yellow dragon scales", 0, ACID_RES, STONE_RES,
+    DRGN_ARMR("yellow dragon scales", 0, ACID_RES,
               500, 10, CLR_YELLOW),
 #undef DRGN_ARMR
 
