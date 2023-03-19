@@ -1754,6 +1754,8 @@ static const struct o_range o_ranges[] = {
     {"cloak", ARMOR_CLASS, MUMMY_WRAPPING, CLOAK_OF_DISPLACEMENT},
     {"shirt", ARMOR_CLASS, HAWAIIAN_SHIRT, T_SHIRT},
     {"dragon scales", ARMOR_CLASS, FIRST_DRAGON_SCALES, LAST_DRAGON_SCALES},
+    {"dragon scale mail",
+     ARMOR_CLASS, GRAY_DRAGON_SCALE_MAIL, YELLOW_DRAGON_SCALE_MAIL},
     {"sword", WEAPON_CLASS, SHORT_SWORD, KATANA},
     {"gray stone", GEM_CLASS, LUCKSTONE, FLINT},
     {"grey stone", GEM_CLASS, LUCKSTONE, FLINT},
@@ -2902,6 +2904,11 @@ typfnd:
             if (Has_contents(otmp) && verysmall(&mons[mntmp]))
                 delete_contents(otmp);  /* no spellbook */
             otmp->spe = ishistoric ? STATUE_HISTORIC : 0;
+            break;
+        case SCALE_MAIL:
+            /* Dragon mail - depends on the order of objects & dragons. */
+            if (mntmp >= PM_GRAY_DRAGON && mntmp <= PM_YELLOW_DRAGON)
+                otmp->otyp = GRAY_DRAGON_SCALE_MAIL + mntmp - PM_GRAY_DRAGON;
             break;
         }
     }
